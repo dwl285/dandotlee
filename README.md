@@ -1,7 +1,7 @@
 # Daniel's project homepage
 
 A static, responsive homepage for **dandotlee.com**, in the existing user-site
-repository. Links to Dot, Writer, Marlow, Practice Card, Fretwise, and Afterglow at `https://afterglow.dandotlee.com`; does not change those applications.
+repository. Links to Dot, Writer, Marlow, Practice Card, Fretwise, Afterglow, and Matho at `https://afterglow.dandotlee.com`; does not change those applications.
 
 ## Design and scope
 
@@ -43,3 +43,5 @@ assets; keep development checks and legacy files out of the deployment.
 See [the domain plan](docs/domain-plan.md).
 
 Fretwise is available at `https://dandotlee.com/guitar`, which redirects to its dedicated Vercel app. Its learning data stays in that app’s browser storage. The homepage remains static.
+
+Matho is linked at `https://matho.dandotlee.com` for paper-first IMO practice.

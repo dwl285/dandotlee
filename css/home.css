@@ -70,3 +70,6 @@ p { margin: 0; }
   .dot-symbol i { background: CanvasText; }
   .project-card { border-color: CanvasText; }
 }
+
+.matho-card { background: #f5efe2; border-color: #ddd1b9; }
+.matho-card .project-symbol svg { width: 42px; height: 42px; }
