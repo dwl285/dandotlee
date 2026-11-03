@@ -36,6 +36,9 @@ p { margin: 0; }
 .dot-card { background: #eff2e9; }
 .writer-card { background: #f5f0e5; border-color: #e0d7c6; }
 .marlow-card { background: #eef1eb; border-color: #d4ddd0; }
+.practice-card { background: #f2ece3; border-color: #dfd3c4; }
+.practice-symbol svg { width: 42px; height: 42px; }
+.project-card .practice-title { font-family: var(--serif); }
 .fretwise-card { background: #eaf0e4; border-color: #d2dcc8; }
 .afterglow-card { background: #f1eee3; border-color: #ddd7c4; }
 .afterglow-symbol svg { width: 42px; height: 42px; }

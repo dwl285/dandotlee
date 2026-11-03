@@ -62,7 +62,8 @@ test('all projects are sibling cards with independent links', async ({ page }) =
   await expect(cards.nth(3)).toHaveAttribute('aria-labelledby', 'practice-title');
   await expect(cards.nth(3).getByRole('heading', { name: 'Practice Card', exact: true })).toHaveAttribute('id', 'practice-title');
   await expect(page.locator('article').filter({ has: practiceLink })).toHaveCount(1);
-  await expect(cards.nth(3).locator('.project-category, .project-description')).toHaveCount(0);
+  await expect(cards.nth(3).locator('.project-category')).toHaveText('Focused guitar practice');
+  await expect(cards.nth(3).locator('.project-description')).toHaveText('Work through tricky song passages, one focused practice card at a time.');
 });
 
 for (const width of [320, 390, 640, 768, 1440]) {
@@ -154,12 +155,12 @@ test('title hover affordance is visible without changing navigation behavior', a
 });
 
 for (const width of [320, 390, 640, 768, 1440]) {
-  test(`Dot, Writer and Marlow share complete structure and aligned styling at ${width}px`, async ({ page }) => {
+  test(`Dot, Writer, Marlow and Practice Card share complete structure and aligned styling at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
     await page.mouse.move(0, 0);
-    const cards = page.locator('.project-grid > article.project-card:is(.dot-card, .writer-card, .marlow-card)');
-    await expect(cards).toHaveCount(3);
+    const cards = page.locator('.project-grid > article.project-card:is(.dot-card, .writer-card, .marlow-card, .practice-card)');
+    await expect(cards).toHaveCount(4);
     const metrics = [];
     for (const card of await cards.all()) {
       await expect(card.locator(':scope > .card-top')).toHaveCount(1);
