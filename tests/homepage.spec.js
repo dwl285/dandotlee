@@ -10,9 +10,10 @@ const projects = [
   ['Fretwise', 'https://dandotlee.com/guitar'],
   ['Afterglow', 'https://afterglow.dandotlee.com'],
   ['Matho', 'https://matho.dandotlee.com'],
+  ['Lemmings', 'https://lemmings.dandotlee.com'],
 ];
 
-test('has project content and title links to the seven destinations', async ({ page }) => {
+test('has project content and title links to the eight destinations', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveTitle('Daniel Lee — Personal projects');
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
@@ -44,7 +45,7 @@ test('all projects are sibling cards with independent links', async ({ page }) =
   const cards = page.locator('.project-grid > article.project-card');
   await expect(cards).toHaveCount(projects.length);
   await expect(page.locator('.project-grid article')).toHaveCount(projects.length);
-  await expect(cards.locator('h2')).toHaveText(['Dot.', 'Writer', 'Marlow', 'Practice Card', 'Fretwise', 'Afterglow', 'Matho']);
+  await expect(cards.locator('h2')).toHaveText(['Dot.', 'Writer', 'Marlow', 'Practice Card', 'Fretwise', 'Afterglow', 'Matho', 'Lemmings']);
   for (const [index, [name, href]] of projects.entries()) {
     await expect(cards.nth(index).getByRole('link')).toHaveCount(1);
     await expect(cards.nth(index).getByRole('link', { name, exact: true })).toHaveAttribute('href', href);
